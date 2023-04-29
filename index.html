@@ -26,7 +26,7 @@
   <article class="post-content">
     <meta name="twitter:title" content="On the Forward Invariance of Neural ODEs"/>
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://diffusion-planning.github.io/images/diffuser-card.png" />
+    <meta name="twitter:image" content="" />
   <article class="post-content">
 
   <title>On the Forward Invariance of Neural ODEs</title>
@@ -217,7 +217,7 @@
           </p>
           <div align="center">
             <div style="width: 100%;">
-              <div style="float: left; width: 49%; display: inline-block;">
+              <div style="float: left; width: 47%; display: inline-block;">
                 &nbsp;
               </div>
               <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloopx', 'replayx')" class="nounderline replayx">
@@ -281,17 +281,17 @@
                   <font style="color: #bb2222">Ball collision avoidance:</font> left case without invariance, right case with invariance.
                 </p>
               </div>
-              <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloop_blocks', 'replay_blocks')" class="nounderline replay_blocks">
+              <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloopy', 'replayy')" class="nounderline replayy">
                 <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
                 <font style="vertical-align: middle; color: #bb2222;">replay</font>
               </div>
               <br style="clear: left;"/>
             </div>
             
-            <video width=32% autoplay playsinline muted class="noloop_blocks">
+            <video width=32% autoplay playsinline muted class="noloopy" onended="monitor('replayy')">
               <source src='images/obs_walker_without_invariance.mp4' type="video/mp4">
             </video>
-            <video width=32% autoplay playsinline muted class="noloop_blocks">
+            <video width=32% autoplay playsinline muted class="noloopy" onended="monitor('replayy')">
               <source src='images/obs_walker_invariance.mp4' type="video/mp4">
             </video>
             <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
