@@ -305,10 +305,14 @@
 
           <center style="padding-top: 0.5em;">
             <br>
-            <video width=49% autoplay playsinline muted class="noloop_blocks2">
+            <video width=32% autoplay playsinline muted class="noloop_blocks2" style="vertical-align: middle;" onended="monitor('replay_blocks2')">
               <source src='images/video_inv.mp4' type="video/mp4">
             </video>
             <img src="images/driving_safe.png" width=40%>
+             &nbsp;&nbsp;
+            <span style="opacity: 0.0; cursor: pointer;" onclick="replay('noloop_blocks2', 'replay_blocks2')" class="nounderline replay_blocks2">
+              <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
+              <font style="vertical-align: middle; color: #bb2222;">replay</font>
           </center>
 
         </div>
