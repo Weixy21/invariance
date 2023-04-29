@@ -24,12 +24,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <article class="post-content">
-    <meta name="twitter:title" content="On the forward invariance of neural ODEs"/>
+    <meta name="twitter:title" content="On the Forward Invariance of Neural ODEs"/>
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://diffusion-planning.github.io/images/diffuser-card.png" />
   <article class="post-content">
 
-  <title>On the forward invariance of Neural ODEs</title>
+  <title>On the Forward Invariance of Neural ODEs</title>
   <link rel="stylesheet" href="./files/font.css">
   <link rel="stylesheet" href="./files/main.css">
 
@@ -157,43 +157,42 @@
 
         <div class="content project_title">
           <br>
-          <h2>Planning with Diffusion for Flexible Behavior Synthesis</h2>
+          <h2>On the Forward Invariance of Neural ODEs</h2>
           <div>
             <div class="authors">
-                <a href="https://jannerm.github.io/">Michael Janner</a><sup>*</sup>,
-                <a href="https://yilundu.github.io/">Yilun Du</a><sup>*</sup>,
-                <a href="https://cocosci.mit.edu/josh">Joshua Tenenbaum</a>, and
-                <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>
+                <a href="https://people.csail.mit.edu/weixy/">Wei Xiao</a>,
+                <a href="">Tsun-Hsuan Wang</a>,
+                <a href="">Ramin Hasani</a>,
+                <a href="">Mathias Lechner</a>,
+                <a href="">Yutong Ban</a>,
+                <a href="">Chuang Gan</a>,
+                <a href="">Daniela Rus</a>
             </div>
             <div style="margin-top: -0.35em;">
-              <span class="link"><a href="https://icml.cc/">ICML 2022 (long talk)</a></span>&nbsp;&nbsp;
+              <span class="link"><a href="https://icml.cc/">ICML 2023</a></span>&nbsp;&nbsp;
               <span class="tag">
-                <a href="https://arxiv.org/abs/2205.09991" class="link2">Paper</a>&nbsp;
-                <a href="https://github.com/jannerm/diffuser" class="link2">Code</a>&nbsp;
-                <a href="https://colab.research.google.com/drive/1YajKhu-CUIGBJeQPehjVPJcK_b38a8Nc?usp=sharing" class="link2">Colab</a>&nbsp;
-                <a href="files/bib.txt" class="link2">BibTex</a>&nbsp;
+                <a href="https://arxiv.org/abs/2210.04763" class="link2">Paper</a>&nbsp;
+                <a href="" class="link2">Code</a>&nbsp;
+                <a href="" class="link2">OpenReview</a>&nbsp;
               </span>
             </div>
-          </div>
-          <div style="font-size: 0.75em; margin-top: -0.75em;">
-            <span>*</span>equal contribution
           </div>
         </div>
 
         <br><br>
 
         <div class="content" style="width: 100%; margin-top: -1em;">
-          <div class="title"><b>Planning as denoising</b></div>
+          <div class="title"><b>Forward Invariance</b></div>
           <br>
           <table border=0>
             <tr valign=middle>
               <td>
-                <img src="images/diffuser_schematic-01.png" width=85%>
+                <img src="images/invprop.png" width=85%>
               </td>
               <td>
                 <p style="float: right; width: 95%">
-                  Diffuser is a <a href="https://arxiv.org/abs/1503.03585" class="link2">denoising diffusion</a> <a href="https://arxiv.org/abs/2006.11239" class="link2">probabilistic model</a> that plans by iteratively refining randomly sampled noise.
-                  The denoising process lends itself to flexible conditioning, by either using gradients of an objective function to bias plans toward high-reward regions or conditioning the plan to reach a specified goal.
+                  <a href="https://arxiv.org/abs/1806.07366" class="link2">Neural ODEs</a> are continuous models that excel in learning representations from data with temporal properties, such as modeling system dynamics and controllers.
+                  Ensuring the output of neural ODEs to satisfy a certain performance (such as safety) is necessary for a variety of settings, which is defined as the forward invariance of neural ODEs. We propose a new method to ensure neural ODEs with invariance properties using <a href="https://arxiv.org/abs/1903.04706" class="link2">Control Barrier Functions (CBFs)</a>.
                 </span>
               </td>
             </tr>
@@ -201,21 +200,12 @@
 
           <center style="padding-top: 0.5em;">
             <br>
+            <p>
+            Illustrative introduction to CBFs and its typical application in safe driving.
+            </p>
+            <img src="images/CBF.png" width=49%>
             <video width=49% autoplay playsinline muted class="noloop">
-              <source src="images/hopper-merged.mp4" type="video/mp4">
-            </video>
-            <video width=49% autoplay playsinline muted class="noloop">
-              <source src="images/walker2d-merged.mp4" type="video/mp4">
-            </video>
-            <br>
-            <br>
-            <span style="opacity: 0.0; cursor: pointer;">
-              <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
-              <font style="vertical-align: middle; color: #bb2222;">replay</font>
-            </span>
-              &nbsp;&nbsp;
-            <video width=49% autoplay playsinline muted class="noloop" onended="monitor('replay')" style="vertical-align: middle;">
-              <source src="images/joined.mp4" type="video/mp4">
+              <source src="images/Auto_driving_3D.mp4" type="video/mp4">
             </video>
               &nbsp;&nbsp;
             <span style="opacity: 0.0; cursor: pointer;" onclick="replay('noloop', 'replay')" class="nounderline replay">
@@ -228,38 +218,33 @@
         <br>
 
         <div class="content" align="left" style="width: 100%;">
-          <div class="title"><b>Variable-length planning</b></div>
+          <div class="title"><b>Spiral Curve Regression with Specifications</b></div>
           <p>
-            Diffuser's planning horizon is determined by the size of the random noise used to initialize the denoising process.
+            The neural ODE is used to model a spiral curve that avoids critical areas (red): invariance propagated to model parameters.
           </p>
-          <video width=90% loop autoplay playsinline muted class="loop">
-            <source src="images/halfcheetah-speed.mp4" type="video/mp4">
-          </video>
+          <img src="images/spiral.png" width=95%>
         </div>
         <br>
         <br>
 
         <div class="content" align="left" style="width: 100%;">
-          <div class="title"><b>Flexible behavior synthesis</b></div>
+          <div class="title"><b>Physical Dynamics Modelling</b></div>
           <p>
-            Diffuser acts as an unconditional prior over possible behaviors.
-            We can plan for new test-time tasks by guiding its sampled plans with reward functions or constraints.
-            All of the plans below are executed by a single model.
+            Neural ODEs are used to model the dynamics of Walker2D in Gym: invariance propagated to model parameters.
           </p>
           <br>
           <div align="center">
             <p>
-              <font style="color: #bb2222">Unconditional stacking:</font> Maximize the height of a block tower, with no further constraints.
+              <font style="color: #bb2222">Roof collision avoidance:</font> left case without invariance, right case with invariance.
             </p>
-            <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;">
-              <source src='images/blocks/uncond_stack/1.mp4' type="video/mp4">
+            <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
+              <source src='images/walking_without_invariance.mp4' type="video/mp4">
             </video>
             <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
-              <source src='images/blocks/uncond_stack/5.mp4' type="video/mp4">
+              <source src='images/walking_with_invariance.mp4' type="video/mp4">
             </video>
-            <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
-              <source src='images/blocks/uncond_stack/6.mp4' type="video/mp4">
-            </video>
+            <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
+              src='images/walker.png' width=64%>
           </div>
           <br>
 
@@ -269,7 +254,7 @@
               </div>
               <div style="float: left; width: 70%; display: inline-block; text-align: center;">
                 <p>
-                  <font style="color: #bb2222">Conditional stacking:</font> Stack towers subject to test-time constraints.
+                  <font style="color: #bb2222">Ball collision avoidance:</font> left case without invariance, right case with invariance.
                 </p>
               </div>
               <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloop_blocks', 'replay_blocks')" class="nounderline replay_blocks">
@@ -281,25 +266,13 @@
 
           <div align="center">
             <video width=32% autoplay playsinline muted class="noloop_blocks">
-              <source src='images/blocks/cond_stack/1.mp4' type="video/mp4">
+              <source src='images/obs_walker_without_invariance.mp4' type="video/mp4">
             </video>
             <video width=32% autoplay playsinline muted class="noloop_blocks">
-              <source src='images/blocks/cond_stack/3.mp4' type="video/mp4">
-            </video>
-<!--             <video width=24% autoplay playsinline muted class="noloop_blocks">
-              <source src='images/blocks/rearrange/0.mp4' type="video/mp4">
-            </video> -->
-            <video width=32% autoplay playsinline muted class="noloop_blocks">
-              <source src='images/blocks/rearrange/1.mp4' type="video/mp4">
+              <source src='images/obs_walker_invariance.mp4' type="video/mp4">
             </video>
             <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
-              src='images/blocks/png/cond_1.png' width=32%>
-            <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
-              src='images/blocks/png/cond_3.png' width=32%>
-<!--             <img style="vertical-align: middle; padding-top: 2px; padding-left: 1%; padding-right: 1%;"
-              src='images/blocks/png/rearrange_0.png' width=24%> -->
-            <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
-              src='images/blocks/png/rearrange_1.png' width=32%>
+              src='images/obs_walker.png' width=64%>
           </div>
 
         </div>
@@ -307,35 +280,47 @@
         <br>
         <br>
 
-        <div class="video-container">
+        <!--div class="video-container">
           <center>
             <iframe src="https://drive.google.com/file/d/1JxCJcRfDSt1brpUJkgEGL3Li3-loxGug/preview"
                     width="80%" allow="autoplay"></iframe>
             </center>
+        </div-->
+    
+        <div class="content" align="left" style="width: 100%;">
+          <div class="title"><b>Lidar-based Safe Driving</b></div>
+          <p>
+            The neural ODE (with lidar as input) is used to control an autonomous vehicle: invariance propagated to lidar (red trajectory-w/o invariance, green trajectory-w/ invariance, blue trajectory-conservative methods).
+          </p>
+          <video width=95% autoplay playsinline muted class="loop">
+              <source src="images/video_inv.mp4" type="video/mp4">
+            </video>
         </div>
+        <br>
+        <br>
+    
         <br>
         <br>
 
         <div class="content" align="left" style="width: 100%;">
-          <div class="title"><b>Planning with Diffusion for Flexible Behavior Synthesis</b></div>
+          <div class="title"><b>On the Forward Invariance of Neural ODEs</b></div>
              <div class="authors">
-                <a href="https://jannerm.github.io/">Michael Janner</a><sup>*</sup>,
-                <a href="https://yilundu.github.io/">Yilun Du</a><sup>*</sup>,
-                <a href="https://cocosci.mit.edu/josh">Joshua Tenenbaum</a>, and
-                <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>
+                <a href="https://people.csail.mit.edu/weixy/">Wei Xiao</a>,
+                <a href="">Tsun-Hsuan Wang</a>,
+                <a href="">Ramin Hasani</a>,
+                <a href="">Mathias Lechner</a>,
+                <a href="">Yutong Ban</a>,
+                <a href="">Chuang Gan</a>,
+                <a href="">Daniela Rus</a>
             </div>
             <div>
-              <span class="link"><a href="https://icml.cc/">ICML 2022</a></span>&nbsp;&nbsp;
+              <span class="link"><a href="https://icml.cc/">ICML 2023</a></span>&nbsp;&nbsp;
               <span>
-                <a href="https://arxiv.org/abs/2205.09991" class="link2">Paper</a>&nbsp;
-                <a href="https://github.com/jannerm/diffuser" class="link2">Code</a>&nbsp;
-                <a href="https://colab.research.google.com/drive/1YajKhu-CUIGBJeQPehjVPJcK_b38a8Nc?usp=sharing" class="link2">Colab</a>&nbsp;
-                <a href="files/bib.txt" class="link2">BibTex</a>&nbsp;
+                <a href="https://arxiv.org/abs/2210.04763" class="link2">Paper</a>&nbsp;
+                <a href="" class="link2">Code</a>&nbsp;
+                <a href="" class="link2">OpenReview</a>&nbsp;
               </span>
-            </div>
-            <div style="font-size: 0.75em;">
-              <span>*</span>equal contribution
-            </div>
+            </div> 
         </div>
 
     </div>
