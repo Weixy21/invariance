@@ -289,6 +289,38 @@
               <source src="images/video_inv.mp4" type="video/mp4">
             </video>
         </div>
+    
+        <div class="content" align="left" style="width: 100%;">
+          <div class="title"><b>Lidar-based Safe Driving</b></div>
+          <p>
+            The neural ODE (with lidar as input) is used to control an autonomous vehicle: invariance propagated to lidar (red trajectory-w/o invariance, green trajectory-w/ invariance, blue trajectory-conservative methods).
+          </p>
+          <br>
+            <div style="width: 100%;">
+              <div style="float: left; width: 14%; display: inline-block;">
+                &nbsp;
+              </div>
+              <div style="float: left; width: 70%; display: inline-block; text-align: center;">
+                <p>
+                  <font style="color: #bb2222">Ball collision avoidance:</font> left case without invariance, right case with invariance.
+                </p>
+              </div>
+              <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloop_blocks', 'replay_blocks')" class="nounderline replay_blocks">
+                <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
+                <font style="vertical-align: middle; color: #bb2222;">replay</font>
+              </div>
+              <br style="clear: left;"/>
+            </div>
+
+          <div align="center">
+            <video width=76% autoplay playsinline muted class="noloop_blocks">
+              <source src='images/video_inv.mp4' type="video/mp4">
+            </video>
+            <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
+              src='images/driving_safe.png' width=64%>
+          </div>
+
+        </div>
         <br>
         <br>
     
