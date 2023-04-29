@@ -241,7 +241,7 @@
         <div class="content" align="left" style="width: 100%;">
           <div class="title"><b>Physical Dynamics Modeling</b></div>
           <p>
-            Neural ODEs are used to model the dynamics of Walker2D in Gym: invariance propagated to model parameters.
+            The neural ODE is used to model the dynamics of Walker2D in Gym: invariance propagated to model parameters.
           </p>
           <br>
           <div align="center">
@@ -315,7 +315,7 @@
         <div class="content" align="left" style="width: 100%;">
           <div class="title"><b>Lidar-based Safe Driving</b></div>
           <p>
-            The neural ODE (with lidar as input) is used to control an autonomous vehicle: invariance propagated to lidar (red trajectory-w/o invariance, green trajectory-w/ invariance, blue trajectory-conservative methods).
+            The neural ODE (with lidar as external input) is used to control an autonomous vehicle (i.e., a controller): invariance propagated to lidar (red trajectory-w/o invariance, green trajectory-w/ invariance, blue trajectory-conservative methods).
           </p>
           <br>
             <div style="width: 100%;">
@@ -324,7 +324,7 @@
               </div>
               <div style="float: left; width: 70%; display: inline-block; text-align: center;">
                 <p>
-                  <font style="color: #bb2222">Original lidar: red</font>, <font style="color: #00FF7F">optimized lidar with invariance: green.</font>
+                  <font style="color: #bb2222">Original lidar-red;</font> <font style="color: #006400">optimized lidar with invariance-green.</font>
                 </p>
               </div>
               <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloop', 'replay')" class="nounderline replay">
