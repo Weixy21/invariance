@@ -1,0 +1,6 @@
+@inproceedings{xiao2023inv,
+  title = {On the Forward Invariance of Neural ODEs},
+  author = {Wei Xiao and Tsun-Hsuan Wang and Ramin Hasani and Mathias Lechner and Yutong Ban and Chuang Gan and Daniela Rus},
+  booktitle = {International Conference on Machine Learning},
+  year = {2023}
+}
